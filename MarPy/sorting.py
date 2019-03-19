@@ -12,7 +12,6 @@ def bubble_sort(items):
     list
         list of elements in items, sorted in ascending order.
     '''
-
     moo1 = len(items) - 1
 
     for x in range(len(items)):
@@ -20,7 +19,7 @@ def bubble_sort(items):
             if items[y] > items[y+1]:
                 items[y], items[y+1] = items[y+1], items[y]
 
-    return items
+        return items
 
 
 
@@ -72,18 +71,16 @@ def merge_sort(items):
         list
             list of elements in items, sorted in ascending order.
         '''
+        if len(items) <= 1:
+            return items
+        mid = len(items) // 2
+        i1 = items[:mid]
+        i2 = items[mid:]
+        
+        i1 = merge_sort(i1)
+        i2 = merge_sort(i2)
 
-    if len(items) <= 1:
-        return items
-
-    mid = len(items) // 2
-    i1 = items[:mid]
-    i2 = items[mid:]
-
-    i1 = merge_sort(i1)
-    i2 = merge_sort(i2)
-
-    return list(merge(i1,i2))
+        return list(merge(i1,i2))
 
 
 def quick_sort(items):
