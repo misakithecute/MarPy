@@ -19,7 +19,7 @@ def bubble_sort(items):
             if items[y] > items[y+1]:
                 items[y], items[y+1] = items[y+1], items[y]
 
-        return items
+    return items
 
 
 
@@ -76,7 +76,7 @@ def merge_sort(items):
         mid = len(items) // 2
         i1 = items[:mid]
         i2 = items[mid:]
-        
+
         i1 = merge_sort(i1)
         i2 = merge_sort(i2)
 
